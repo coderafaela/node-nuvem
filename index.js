@@ -6,7 +6,7 @@ app.get("/", function (req, res) {
 });
 
 app.get("/produtos", function (req, res) {
-  res.send("lista de produto");
+  res.send("lista de produto versão 2.0");
 });
 
 //app.get("/consulta/:parametro", function (req, res) {
