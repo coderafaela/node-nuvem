@@ -2,32 +2,32 @@ const express = require("express");
 const app = express();
 
 app.get("/", function (req, res) {
-  res.send("Bem vindo, ao meu site");
+  res.send("Bem vinde, pessoa");
 });
 
-app.get("/produtos", function (req, res) {
-  res.send("lista de produto versão 2.0");
+app.get("/cadastrados", function (req, res) {
+  res.send("lista de cadastrados");
 });
 
-//app.get("/consulta/:parametro", function (req, res) {
-//  res.send("retorno consulta:" + req.params.parametro);
-//});
+app.get("/consulta/:parametro", function (req, res) {
+  res.send("retorno consulta:" + req.params.parametro);
+});
 
 app.get("/consulta/", function (req, res) {
-  var cpf = req.query["cpf"];
-  if (cpf) {
-    res.send("retorno consulta: cpf = " + cpf);
+  var nome = req.query["nome"];
+  if (nome) {
+    res.send("retorno consulta: cadastrado = " + nome);
   } else {
-    res.send("CPF NÃO FOI FORNECIDO");
+    res.send("NOME NÃO FOI FORNECIDO");
   }
 });
 
 app.get("/cadastro/{:nome}", function (req, res) {
   var nome = req.params.nome;
   if (nome) {
-    res.send("<h1>produto " + nome + " criado!</h1>");
+    res.send("<h1> o nome" + nome + " foi cadastrado!</h1>");
   } else {
-    res.send("<h1>produto criado!</h1>");
+    res.send("<h1>Cadastro feito!</h1>");
   }
 });
 
