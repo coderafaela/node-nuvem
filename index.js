@@ -16,7 +16,7 @@ app.get("/consulta/:parametro", function (req, res) {
 app.get("/consulta/", function (req, res) {
   var nome = req.query["nome"];
   if (nome) {
-    res.send("retorno consulta: cadastrado = " + nome);
+    res.send("o nome " + nome + " está cadastrado);
   } else {
     res.send("NOME NÃO FOI FORNECIDO");
   }
